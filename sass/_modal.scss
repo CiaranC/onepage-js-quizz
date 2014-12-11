@@ -11,6 +11,8 @@
     opacity: 0;
     visibility: hidden;
     z-index: 40;
+    @include border-radius (3px);
+
 
     @include transition(opacity .25s ease 0s, visibility linear .35s);
     &.state-show {
@@ -82,8 +84,9 @@
     .modal-inset {
         position: relative;
         padding: 60px;
-        background-color: white;
-        min-width: 320px;
+        background-color: $yellow;
+        @include border-radius (3px); 
+        min-width: 60%;
         min-height: 126px;
         margin: auto;
         visibility: hidden;
@@ -115,10 +118,12 @@
               padding-bottom: 22px;
               display: block;
               color: #F2594B;
-              text-align: center;
+              text-align: left;
             }
             p {
               padding-bottom: 20px;
+              text-align: center;
+              font-size: 1.8em;
             }
             .ps {
               font-size: 12px;

@@ -34,7 +34,6 @@ $(document).ready(function() {
         //Design
         verticalCentered: true,
         resize : true,
-        sectionsColor : ['#ccc', '#fff'],
         paddingTop: '3em',
         paddingBottom: '10px',
         fixedElements: '#header, .footer',

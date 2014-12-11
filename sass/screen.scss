@@ -3,13 +3,17 @@
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 @import "compass/reset";
+@import "variables";
 @import "compass/css3";
 @import "modal";
+@import "mixins";
+@import "compass/utilities/color/contrast";
 
 
 /* General */
 html, body{
 font-family: 'Quicksand', sans-serif;
+color: $black;
 }
 
 h2{
@@ -28,13 +32,14 @@ h2{
 
 
 .answer{
-	border:1px solid black;
 	margin: 2%;
 	width: 40%;
 	height: 35%;
+	vertical-align: middle;
 	@include inline-block;
 	@include border-radius (3px);
 	cursor: pointer;
+	vertical-align: middle;
 
 	@media (max-width: 720px){
 		width: 90%;
@@ -42,16 +47,51 @@ h2{
 		height: 20%;
 	}
 
+	p{
+		font-size: 2em;
+		font-weight: lighter;
+		padding: 2em;
+		@include vertical-align;
+	}
+
+}
+
+.selected{
+	font-weight: bold;
 }
 
 input[type=radio]{
 	display: none;
 }
 
-.selected{
-	background: pink;
+.center{
+	margin: 0 auto;
+	display: block;
+	text-align: center;
+	width: auto;
+
 }
 
+.btn {
+  border: none;
+  box-shadow: none;
+  border-radius: .25em;
+  font-size: 1.4rem;
+  font-family: "Open Sans", sans-serif;
+  color: $black;
+  padding: .6em 2.2em;
+  cursor: pointer;
+  background: $orange;
+  @include inline-block;
+
+  &:hover{
+  	@include filter(brightness(1.1));
+  }
+}
+
+.share, .share a, .share div{
+	margin: 1em;
+}
 
 //*spinner/*/
 
@@ -74,7 +114,8 @@ input[type=radio]{
   to {transform: rotate(360deg) translatez(0);}
 }
 
-.two {
+.spinner{
+  @include inline-block;
   height: 50px;
   width:  50px;
   border-width: 5px;
@@ -96,6 +137,91 @@ input[type=radio]{
 *:before, *:after {
   content: '';
 }
+
+//section styles//
+.one{
+	background: $yellow;
+
+	.answer{
+		background: $black;
+		color: $yellow;
+	}
+
+	.selected{
+		background: $orange;
+	}
+}
+
+.two{
+	background: $green;
+
+	.answer{
+		background: $grey;
+		color: $green;
+	}
+
+	.selected{
+		background: $orange;
+	}
+}
+
+.three{
+	background: $black;
+
+	h2{
+		color: $green;
+	}
+
+	.answer{
+		background: $green;
+		color: $black;
+	}
+
+	.selected{
+		background: $orange;
+	}
+}
+
+.four{
+	background: $grey;
+
+	h2{
+		color: $yellow;
+	}
+
+	.answer{
+		background: $yellow;
+		color: $grey;
+	}
+
+	.selected{
+		background: $orange;
+	}
+}
+
+.five{
+	background: $yellow;
+
+
+	.answer{
+		background: $grey;
+		color: $yellow;
+	}
+
+	.selected{
+		background: $orange;
+	}
+}
+
+.six{
+	background: $black;
+
+}
+
+.hide{
+	display: none;
+}
+
 
 
 
