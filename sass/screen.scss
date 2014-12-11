@@ -1,0 +1,101 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+@import "compass/reset";
+@import "compass/css3";
+@import "modal";
+
+
+/* General */
+html, body{
+font-family: 'Quicksand', sans-serif;
+}
+
+h2{
+	font-size: 2em;
+	margin-bottom: 1em;
+}
+
+/* Layout */
+.wrapper{
+	width: 100%;
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+	height: 100%;
+}
+
+
+.answer{
+	border:1px solid black;
+	margin: 2%;
+	width: 40%;
+	height: 35%;
+	@include inline-block;
+	@include border-radius (3px);
+	cursor: pointer;
+
+	@media (max-width: 720px){
+		width: 90%;
+		margin: 2% 0;
+		height: 20%;
+	}
+
+}
+
+input[type=radio]{
+	display: none;
+}
+
+.selected{
+	background: pink;
+}
+
+
+//*spinner/*/
+
+@-webkit-keyframes clockwise
+{
+  to {transform: rotate(360deg) translatez(0);}
+}
+
+@-moz-keyframes clockwise
+{
+  to {transform: rotate(360deg) translatez(0);}
+}
+@-o-keyframes clockwise
+{
+  to {transform: rotate(360deg) translatez(0);}
+}
+
+@keyframes clockwise
+{
+  to {transform: rotate(360deg) translatez(0);}
+}
+
+.two {
+  height: 50px;
+  width:  50px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: hsla(0, 0%, 100%, 0.75)
+  hsla(0, 0%, 100%, 0.75) hsla(0, 0%, 100%, 0.25) hsla(0, 0%, 100%, 0.25);
+  border-radius: 100%;
+  -moz-animation: clockwise .5s linear infinite;
+  -webkit-animation: clockwise .5s linear infinite;
+  -o-animation: clockwise .5s linear infinite;
+    animation: clockwise .5s linear infinite;
+
+}
+
+*,
+*:before,
+*:after { box-sizing: border-box; }
+
+*:before, *:after {
+  content: '';
+}
+
+
+
